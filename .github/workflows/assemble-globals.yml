@@ -18,8 +18,9 @@ jobs:
           import base64, pathlib
           data = ''.join(p.read_text() for p in sorted(pathlib.Path('globals-parts').glob('part-*.b64')))
           pathlib.Path('app').mkdir(exist_ok=True)
-          pathlib.Path('app/globals.css').write_bytes(base64.b64decode(data))
-          print('wrote', pathlib.Path('app/globals.css').stat().st_size)
+          out = pathlib.Path('app/globals.css')
+          out.write_bytes(base64.b64decode(data))
+          print('wrote', out.stat().st_size)
           PY
       - name: Commit
         run: |
@@ -28,5 +29,7 @@ jobs:
           rm -rf globals-parts
           rm -f .github/workflows/assemble-globals.yml
           git add -A
+          git status
           git commit -m "Add app/globals.css via Actions" || exit 0
+          git pull --rebase origin main || true
           git push
