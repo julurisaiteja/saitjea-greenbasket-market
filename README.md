@@ -1,14 +1,28 @@
-# Greenbasket Market
+# Greenbasket (sai-greenbasket-market)
 
-Diamond #6 — Greenbasket Market fresh grocery commerce demo.
-
-Next.js App Router storefront with shop, product detail, cart, checkout, and a special offer page.
+Diamond storefront — Fresh Vector — flat produce icons, sunny market stalls.
 
 ## Run locally
 
 ```bash
-npm install
+npm i
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+## Scripts
+
+- `npm run dev` — development server
+- `npm run build` — production build
+- `npm start` — serve production build
+
+## Features
+
+- Style-map unique homepage (vec-hero)
+- Niche film hero + soft CSS motion
+- Catalog, deep PDP, offers, reviews, AI assistant
+- Cart → checkout → success (demo payments)
+- Special experience at `/special`
+
+Demo only — no real payments.
