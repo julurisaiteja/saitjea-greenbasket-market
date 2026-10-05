@@ -12,7 +12,7 @@ export default function SuccessPage(){
       {order&&(
         <div className="card-soft mt-8 p-6 text-left space-y-2">
           <p><span className="text-muted">Order</span> <strong>{order.id}</strong></p>
-          <p><span className="text-muted">Total</span> <strong>${Number(order.total).toFixed(2)}</strong></div>
+          <p><span className="text-muted">Total</span> <strong>${Number(order.total).toFixed(2)}</strong></p>
           {order.eta&&<p><span className="text-muted">ETA</span> <strong>~{order.eta} min</strong></p>}
           <ul className="text-sm text-muted pt-2 space-y-1">{(order.items||[]).map(i=><li key={i.lineKey||i.id}>{i.qty}× {i.name}</li>)}</ul>
         </div>
